@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KluShy — Pas encore dispo !</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Share Tech Mono', monospace;
+      background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #1f1c2c);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: white;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .glitch {
+      position: relative;
+      font-size: 4.5rem;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      animation: flicker 2s infinite alternate;
+    }
+
+    .glitch::before,
+    .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      left: 0;
+      width: 100%;
+      color: white;
+      background: transparent;
+      overflow: hidden;
+    }
+
+    .glitch::before {
+      top: -2px;
+      text-shadow: -2px 0 red;
+      animation: glitchTop 1s infinite linear alternate-reverse;
+    }
+
+    .glitch::after {
+      top: 2px;
+      text-shadow: -2px 0 cyan;
+      animation: glitchBottom 1.5s infinite linear alternate-reverse;
+    }
+
+    @keyframes glitchTop {
+      0% { clip: rect(0, 900px, 0, 0); }
+      10% { clip: rect(0, 900px, 40px, 0); }
+      20% { clip: rect(10px, 900px, 60px, 0); }
+      100% { clip: rect(0, 900px, 0, 0); }
+    }
+
+    @keyframes glitchBottom {
+      0% { clip: rect(0, 900px, 0, 0); }
+      10% { clip: rect(40px, 900px, 80px, 0); }
+      20% { clip: rect(60px, 900px, 100px, 0); }
+      100% { clip: rect(0, 900px, 0, 0); }
+    }
+
+    @keyframes flicker {
+      from { opacity: 1; }
+      50% { opacity: 0.8; }
+      to { opacity: 1; }
+    }
+
+    p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin-top: 1.5rem;
+      color: #ccc;
+    }
+
+    .btn {
+      margin-top: 2rem;
+      background: #ffffff10;
+      border: 1px solid #ffffff40;
+      color: white;
+      padding: 0.8rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s ease;
+      backdrop-filter: blur(4px);
+    }
+
+    .btn:hover {
+      background: #ffffff30;
+      transform: scale(1.05);
+    }
+
+    footer {
+      position: absolute;
+      bottom: 1rem;
+      font-size: 0.8rem;
+      color: #aaa;
+    }
+
+    @media (max-width: 600px) {
+      .glitch {
+        font-size: 3rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      .btn {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1 class="glitch" data-text="Pas encore dispo !">Pas encore dispo !</h1>
+  <p>Je travaille dessus, pas d'inquiétude. <br><em>(I'm working on it, no worries.)</em></p>
+  <a href="https://guns.lol/klushy" class="btn">Retour à l'accueil</a>
+  <footer>&copy; 2025 KluShy • Reviens plus tard 👀</footer>
+</body>
+</html>
